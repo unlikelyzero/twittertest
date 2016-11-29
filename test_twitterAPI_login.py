@@ -15,12 +15,19 @@ access_token_key = os.environ.get('ACCESS_TOKEN_KEY')
 access_token_secret = os.environ.get('ACCESS_TOKEN_SECRET')
 
 def test_login_to_twitter():
+    """
+    Test that when authenticating with twitter credentials, the response code is 200.
+    """
     url = 'https://api.twitter.com/1.1/account/verify_credentials.json'
     twitter = OAuth1Session(consumer_key, consumer_secret, access_token_key, access_token_secret)
     r = twitter.get(url)
     assert r.status_code == 200
 
 def test_login_to_twitter_negative():
+    """
+    Test that when authenticating with incorrect twitter credentials, the response code
+    is 401.
+    """
     url = 'https://api.twitter.com/1.1/account/verify_credentials.json'
     twitter = OAuth1Session('bad', 'bad', 'bad', 'bad')
     r = twitter.get(url)
