@@ -22,6 +22,6 @@ def test_login_to_twitter():
 
 def test_login_to_twitter_negative():
     url = 'https://api.twitter.com/1.1/account/verify_credentials.json'
-    twitter = OAuth1Session(consumer_key, consumer_secret, access_token_key, 'asdf')
+    twitter = OAuth1Session('bad', 'bad', 'bad', 'bad')
     r = twitter.get(url)
     assert r.status_code == 401
