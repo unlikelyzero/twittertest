@@ -1,3 +1,8 @@
+# Py.test automated test to verify that a user can log into the twitter via the REST API
+# Please provide CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET from
+# your dev.twitter.com account:
+# https://dev.twitter.com/oauth/overview/application-owner-access-tokens
+
 #pip install requests_oauthlib
 #pip install pytest
 import pytest
